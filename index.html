@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KodNest Premium Build System</title>
+  
+  <!-- PRECONNECT FOR FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- FONTS: Playfair Display (Serif) & Inter (Sans) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- STYLES -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="top-bar">
+    <div class="container flex justify-between items-center">
+      <div class="brand-name">KodNest Premium</div>
+      <div class="progress-indicator">Step 3 / 8</div>
+      <div class="status-badge in-progress">In Progress</div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-layout container">
+    
+    <!-- CONTEXT HEADER -->
+    <header class="context-header">
+      <h1>Configure Core Integration</h1>
+      <p class="subtext">Establish the primary data flow connection between your source and the analytics engine.</p>
+    </header>
+
+    <!-- WORKSPACE GRID (70% / 30%) -->
+    <div class="workspace-grid">
+      
+      <!-- PRIMARY WORKSPACE (70%) -->
+      <section class="primary-workspace">
+        <div class="card">
+          <h3 class="form-label" style="font-size: 1.25rem; margin-bottom: var(--space-md);">Connection Details</h3>
+          
+          <div class="form-group">
+            <label class="form-label" for="api-key">API Key</label>
+            <input type="text" id="api-key" class="form-input" placeholder="pk_live_...">
+            <p style="font-size: 0.75rem; margin-top: 4px; color: var(--color-text-secondary);">Your secret key from the provider dashboard.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="endpoint-url">Endpoint URL</label>
+            <input type="url" id="endpoint-url" class="form-input" value="https://api.kodnest.com/v1/integrations">
+          </div>
+
+          <div class="flex gap-md" style="margin-top: var(--space-lg);">
+            <button class="btn btn-primary">Save Configuration</button>
+            <button class="btn btn-secondary">Test Connection</button>
+          </div>
+        </div>
+
+        <!-- EMPTY STATE EXAMPLE -->
+        <div class="card" style="margin-top: var(--space-md); text-align: center; padding: var(--space-lg);">
+          <div style="font-size: 2rem; margin-bottom: var(--space-sm); color: #CCC;">⊕</div>
+          <h4 style="font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: var(--space-xs);">Add Secondary Source</h4>
+          <p style="margin: 0 auto; max-width: 400px; font-size: 0.875rem;">No secondary sources configured yet. Connect a database to enrich your analytics.</p>
+          <button class="btn btn-secondary" style="margin-top: var(--space-md);">Add Source</button>
+        </div>
+
+      </section>
+
+      <!-- SECONDARY PANEL (30%) -->
+      <aside class="secondary-panel">
+        <h4 class="form-label">Step Explanation</h4>
+        <p style="font-size: 0.875rem; margin-bottom: var(--space-md);">
+          This step initializes the secure handshake. Ensure your API key has `read_write` permissions enabled.
+        </p>
+
+        <h4 class="form-label">Prompt Template</h4>
+        <div class="prompt-box" id="code-prompt">
+          Create a secure connection module using the Provider SDK. Implement retry logic with exponential backoff for 503 errors.
+        </div>
+        
+        <div class="flex flex-column" style="flex-direction: column; gap: var(--space-sm);">
+          <button class="btn btn-secondary btn-full" onclick="copyPrompt()">Copy Prompt</button>
+          <button class="btn btn-secondary btn-full">Build in Lovable</button>
+          <div class="flex gap-sm">
+             <button class="btn btn-primary btn-full" style="background-color: var(--color-success); border-color: var(--color-success);">It Worked</button>
+             <button class="btn btn-primary btn-full" style="background-color: var(--color-error); border-color: var(--color-error);">Error</button>
+          </div>
+          <button class="btn btn-secondary btn-full">Add Screenshot</button>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- PROOF FOOTER -->
+  <footer class="proof-footer">
+    <div class="brand-name" style="font-size: 1rem;">Verification</div>
+    
+    <div class="checklist">
+      <label class="checkbox-item">
+        <input type="checkbox" id="check-ui">
+        <div class="checkbox-visual"></div>
+        <span class="checkbox-label">UI Built</span>
+        <!-- PROOF INPUT POPUP -->
+        <div class="checkbox-input-proof">
+          <label style="display:block; font-size: 0.75rem; margin-bottom: 4px;">Paste Screenshot URL</label>
+          <input type="text" class="form-input" style="padding: 4px 8px; font-size: 0.75rem;">
+        </div>
+      </label>
+
+      <label class="checkbox-item">
+        <input type="checkbox" id="check-logic">
+        <div class="checkbox-visual"></div>
+        <span class="checkbox-label">Logic Working</span>
+      </label>
+
+      <label class="checkbox-item">
+        <input type="checkbox" id="check-test">
+        <div class="checkbox-visual"></div>
+        <span class="checkbox-label">Test Passed</span>
+      </label>
+
+      <label class="checkbox-item">
+        <input type="checkbox" id="check-deploy">
+        <div class="checkbox-visual"></div>
+        <span class="checkbox-label">Deployed</span>
+      </label>
+    </div>
+
+    <!-- SUBMIT BUTTON (Hidden until all checked, theoretically) -->
+    <button class="btn btn-secondary" style="font-size: 0.75rem; padding: 8px 16px;">Next Step →</button>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
