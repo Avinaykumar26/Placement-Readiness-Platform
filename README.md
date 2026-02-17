@@ -1,6 +1,7 @@
 # KodNest Premium Build System
 
 AUTHOR/DEVELOPER : A VINAY KUMAR
+MAIL : avinaykumar2004@gmail.com
 
 > **Design Philosophy:** Calm. Intentional. Coherent. Confident.
 
@@ -60,4 +61,5 @@ Then visit: `http://localhost:8000`
 ---
 
 *"Everything must feel like one mind designed it."*
+
 
