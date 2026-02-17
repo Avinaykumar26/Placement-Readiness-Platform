@@ -1,5 +1,7 @@
 # KodNest Premium Build System
 
+AUTHOR/DEVELOPER : A VINAY KUMAR
+
 > **Design Philosophy:** Calm. Intentional. Coherent. Confident.
 
 A premium SaaS design system architected for serious B2C product companies. This system prioritizes clarity over noise, utilizing a strictly defined typographic scale, a muted and harmonious color palette, and purposeful whitespace to create a "confident" user experience.
@@ -58,3 +60,4 @@ Then visit: `http://localhost:8000`
 ---
 
 *"Everything must feel like one mind designed it."*
+
